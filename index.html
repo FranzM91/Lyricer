@@ -7,15 +7,100 @@
 	<link rel="stylesheet" href="lyricer.css">
 </head>
 <body>
+	<h3>LRC Generator
+		<a href="https://www.lrcgenerator.com/">Open</a>
+	</h3>
+	<h2><a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+	<audio id="player" controls>
+		<source src="Scorpions-Send me an angel.mp3" type="audio/mpeg">
+	</audio>
 	<div id="lyricer">
 	</div>
 	<script type="text/javascript">
-	var text = "[ti:情网]\n[ar:张学友]\n[al:]\n\n[00:00.00]《情网》\n[00:07.50]\n[00:09.00]演唱：张学友\n[00:14.80]\n[00:16.30]请你再为我点上一盏烛光\n[00:24.17]因为我早已迷失了方向\n[00:32.05]我掩饰不住的慌张\n[00:36.01]在迫不及待地张望\n[00:40.01]生怕这一路是好梦一场\n[00:46.72]\n[02:06.30][00:47.81]而你是一张无边无际的网\n[02:14.40][00:55.54]轻易就把我困在网中央\n[02:21.90][01:03.58]我愈陷愈深愈迷惘\n[02:26.09][01:07.44]路愈走愈远愈漫长\n[02:30.08][01:11.44]如何我才能捉住你眼光\n[02:36.61][01:17.81]\n[03:09.15][02:37.70][01:19.00]情愿就这样守在你身旁\n[03:16.96][02:45.56][01:26.94]情愿就这样一辈子不忘\n[03:25.36][02:53.66][01:35.05]我打开爱情这扇窗\n[03:28.98][02:57.58][01:38.82]却看见长夜日凄凉\n[03:32.99][03:01.59][01:42.93]问你是否会舍得我心伤\n[03:41.00][03:08.19][01:50.80]\n[03:54.84]—— END ——\n";
+	var text = `[00:00.00]By DevOpsFM.com
+				[00:00.40]
+				[00:36.30]
+				[00:36.40]The wise man said just walk this way
+				[00:41.60]To the dawn of the light
+				[00:45.20]The wind will blow into your face
+				[00:50.40]As the years pass you by
+				[00:54.20]Hear this voice from deep inside
+				[00:59.30]It's the call of your heart
+				[01:03.10]Close your eyes and you will find
+				[01:08.20]The passage out of the dark
+				[01:13.10]Here I am
+				[01:18.50]Will you send me an angel?
+				[01:22.10]Here I am
+				[01:27.40]In the land of the morning star
+				[01:47.70]The wise man said just find your place
+				[01:52.80]In the eye of the storm
+				[01:56.50]Seek the roses along the way
+				[02:01.60]Just beware of the thorns
+				[02:06.60]Here I am
+				[02:12.00]Will you send me an angel?
+				[02:15.50]Here I am
+				[02:20.90]In the land of the morning star
+				[02:41.30]The wise man said just raise your hand
+				[02:46.30]And reach out for the spell
+				[02:50.10]Find the door to the promised land
+				[02:55.20]Just believe in yourself
+				[02:59.00]Hear this voice from deep inside
+				[03:04.20]It's the call of your heart
+				[03:07.90]Close your eyes and you will find
+				[03:13.00]The way out of the dark
+				[03:18.00]Here I am
+				[03:23.30]Will you send me an angel?
+				[03:27.00]Here I am
+				[03:32.20]In the land of the morning star
+				[03:35.80]Here I am
+				[03:41.00]Will you send me an angel?
+				[03:44.80]Here I am
+				[03:50.00]In the land of the morning star
+				[03:53.70]Here I am
+				[03:59.00]Will you send me an angel?
+				[04:02.60]Here I am
+				[04:07.90]In the land of the morning star
+				[04:11.60]Here I am
+				[04:16.90]Will you send me an angel?
+				[04:20.50]Here I am
+				[04:26.70]By DevOpsFM.com
+				`;
 	var lrc = new Lyricer();
+
+	var audio = document.getElementById("player");
+
 	lrc.setLrc(text);
-	window.addEventListener("lyricerclick", function(e){
-		console.log('clicked on ' + e.detail.time);
+
+	audio.addEventListener( "timeupdate", function() {
+		// console.log(lrc);
+		lrc.move(audio.currentTime);
 	});
+
+	// window.addEventListener("lyricerclick", function(e){
+	// 	console.log('clicked on ' + e.detail.time);
+	// });
 	</script>
+
+	<!-- <h2><a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+		<audio id="player" controls>
+			<source src="Love Me Harder.mp3" type="audio/mpeg">
+		</audio>
+		<div id="lyricer"></div>
+	<script type="text/javascript">
+		var text = "[ti:Love Me Harder]\n[total:236220]\n[offset:0]\n[00:00.61]Ariana Grande、The Weeknd - Love Me Harder\n[00:03.21]Tell me something I need to know\n[00:07.72]Then take my breath and never let it go\n[00:12.76]If you just let me invade your space\n[00:17.48]I'll take the pleasure, take it with the pain\n[00:22.92]And defend the moment I bit my lip\n[00:27.78]Baby in that moment you'll know this is\n[00:32.67]Something bigger than us \n[00:34.22]And be a bliss\n[00:37.45]Give me a reason to believe it\n[00:41.05]'Cause if you want to keep me \n[00:44.12]You gotta, gotta, gotta, gotta, got to love me harder\n[00:50.74]And if you really need me\n[00:53.84]You gotta, gotta, gotta, gotta, got to love me harder\n[00:58.60]Baby, love me harder\n[01:03.85]Love me, love me, love me\n[01:08.70]Harder harder harder\n[01:10.85]I know your motives and you know mine\n[01:15.53]The ones that love me I tend to leave behind\n[01:20.63]If you know about me and choose to stay\n[01:25.13]Then take this pleasure and take it with the pain\n[01:30.77]And defend the moment you bite your lip\n[01:35.31]When I get you moanin you know it's real\n[01:40.47]Can you feel the preasure between your hips\n[01:45.42]I'll make it feel like the first time\n[01:48.94]Cause if you want to keep me \n[01:51.99]You gotta, gotta, gotta, gotta, got to love me harder\n[01:56.82](I'mma love you harder)\n[01:58.74]And if you really need me \n[02:01.80]You gotta, gotta, gotta, gotta, got to love me harder\n[02:06.55](Love love me harder)\n[02:11.59]Love me, love me, love me\n[02:16.53]Harder harder harder\n[02:21.45]Love me, love me, love me\n[02:26.23]Harder harder harder\n[02:30.19]So what will I do if I can't figure it out\n[02:34.28](figure it out)\n[02:35.23]You have to try try try again\n[02:39.91]So what will I do if I can't figure it out\n[02:44.54]I'm gonna leave leave leave 'cause\n[02:47.22]'Cause if you want to keep me \n[02:50.28]You gotta, gotta, gotta, gotta, got to love me harder\n[02:55.05](I'mma love you love you love you)\n[02:56.76]And if you really need me \n[02:59.92]You gotta, gotta, gotta, gotta, got to love me harder\n[03:04.47](Love me love me baby)\n[03:06.42]'Cause if you want to keep me \n[03:09.62]You gotta, gotta, gotta, gotta, got to love me harder\n[03:14.42](Hold me harder)\n[03:16.44]And if you really need me \n[03:19.31]You gotta, gotta, gotta, gotta, got to love me harder\n[03:24.18](I'mma love you harder)\n[03:29.36]Love me, love me, love me, love me\n[03:34.18]Harder, harder, harder\n[03:35.95]Oh, you got to love me, love me, baby\n[03:38.80]Love me, love me, love me\n[03:40.54]Just a little bit harder, harder, baby\n[03:43.86]Harder, harder, harder\n";
+		var audio = document.getElementById("player");
+		var lrc = new Lyricer();
+		lrc.setLrc(text);
+	
+		audio.addEventListener( "timeupdate", function() {
+			lrc.move(audio.currentTime);
+		});
+	
+		window.addEventListener('lyricerclick', function(e){
+		if (e.detail.time > 0) {
+			audio.currentTime = e.detail.time;
+		}
+		});
+	</script> -->
 </body>
 </html>
